@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<xsd:schema 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://emsa.europa.eu/efca/atlantic"
+	elementFormDefault="qualified"
+>
+	<xsd:element name="Atlantic">
+		<xsd:complexType>
+			<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="Vessel">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Flag">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:pattern value="[A-Z]{3}"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="EuCode" type="xsd:boolean"/>
+							<xsd:element name="Ir" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:pattern value="[A-Z0-9]{12}"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="VesselName" type="xsd:string"/>
+							<xsd:element name="Ircs" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="ExtMarking" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="PortName" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="VmsCode" type="xsd:boolean" minOccurs="0"/>
+							<xsd:element name="MMSI" minOccurs="0">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:int">
+										<xsd:minInclusive value="200000000"/>
+										<xsd:maxInclusive value="999999999"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="Type" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="Gear" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="GT" type="xsd:decimal" minOccurs="0"/>
+							<xsd:element name="LOA" type="xsd:decimal" minOccurs="0"/>
+							<xsd:element name="KW" type="xsd:decimal" minOccurs="0"/>
+							<xsd:element name="CatchPermit" type="xsd:boolean" minOccurs="0"/>
+							<xsd:element name="PermitType" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="PermitFrom" type="xsd:date" minOccurs="0"/>
+							<xsd:element name="PermitTo" type="xsd:date" minOccurs="0"/>
+							<xsd:element name="NafoCode" type="xsd:boolean" minOccurs="0"/>
+							<xsd:element name="GHL" type="xsd:boolean" minOccurs="0"/>
+							<xsd:element name="IccatCode" type="xsd:boolean" minOccurs="0"/>
+							<xsd:element name="IccatId" type="xsd:string" minOccurs="0"/>
+							<xsd:element name="NEAFCCode" type="xsd:boolean" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
