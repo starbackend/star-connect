@@ -39,36 +39,36 @@
     </dependencyManagement>
     <distributionManagement>
         <repository>
-            <id>cwatch-repo</id>
-            <name>cwatch-repo-releases</name>
-            <url>https://cwatch.org/repo/libs-release-local</url>
+            <id>devops</id>
+            <name>devops</name>
+            <url>https://archiva-maprohu.rhcloud.com/repository/internal</url>
         </repository>
         <snapshotRepository>
-            <id>cwatch-repo</id>
-            <name>cwatch-repo-snapshots</name>
-            <url>https://cwatch.org/repo/libs-snapshot-local</url>
+            <id>devops-snapshots</id>
+            <name>devops-snapshots</name>
+            <url>https://archiva-maprohu.rhcloud.com/repository/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
     <repositories>
         <repository>
-            <id>cwatch-repo-releases</id>
+            <id>devops</id>
             <releases>
                 <enabled>true</enabled>
             </releases>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <url>http://cwatch.org/repo/ext-release-local</url>
+            <url>https://archiva-maprohu.rhcloud.com/repository/internal</url>
         </repository>
         <repository>
-            <id>cwatch-repo-snapshots</id>
+            <id>devops-snapshots</id>
             <releases>
                 <enabled>false</enabled>
             </releases>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
-            <url>http://cwatch.org/repo/libs-snapshot-local</url>
+            <url>https://archiva-maprohu.rhcloud.com/repository/snapshots</url>
         </repository>
     </repositories>
     <build>
