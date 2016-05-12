@@ -12,6 +12,8 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 /**
  * Created by pappmar on 13/08/2015.
@@ -62,7 +64,7 @@ public class AtlanticTest {
     }
 
     @Test
-    public void test2() throws JAXBException {
+    public void test2() throws JAXBException, FileNotFoundException {
         AtlanticFormat format = new AtlanticFormat();
 
         FormatResult formatResult = new FormatResult() {
@@ -84,7 +86,8 @@ public class AtlanticTest {
             }
         };
 
-        Atlantic atlantic = format.parseCSV(AtlanticTest.class.getResourceAsStream("/atlantic_valid.csv"), formatResult);
+//        Atlantic atlantic = format.parseCSV(AtlanticTest.class.getResourceAsStream("/atlantic_valid.csv"), formatResult);
+        Atlantic atlantic = format.parseCSV(new FileInputStream("target/atl_input.csv"), formatResult);
 
         JAXBContext jc = JAXBContext.newInstance(Atlantic.class, ProjectOvrRootType.class);
         Marshaller m = jc.createMarshaller();
